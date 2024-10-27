@@ -1,13 +1,470 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --primary-blue: #007bff;
+  --primary-red: #ff1a1a
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  max-width: 150px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+html, body {
+  font-family: "Roboto", serif;;
+}
+
+
+
+/* Header */
+#header {
+  height: 100%;
+}
+
+#header .header {
+  height: 100%;
+}
+
+.header .logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.header .nav-container {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .nav-container ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .nav-container ul li {
+  margin: 0 20px;
+  width: 150px;
+  text-align: center;
+}
+
+.header .nav-container ul li a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.1s ease, background-color 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+
+.header .nav-container ul li a:hover {
+  color: #fff;
+  background-color: var(--primary-blue);
+}
+
+.header .nav-container ul li .active {
+  color: #fff;
+  background-color: var(--primary-blue);
+}
+
+/* Todo Page */
+#todo-page {
+  
+}
+
+#todo-page .todo-page {
+  height: 100%;
+  
+}
+
+/* Todo Item */
+.todo-card {
+  width: 90%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.num-display {
+  flex: 1;
+  height: 100%;
+  position: absolute;
+  top: -30%;
+  left: -1%;
+  width: 100%;
+}
+
+.num-display .num-box {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-red);
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+}
+
+.text-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 5;
+  height: 100%;
+  text-align: center;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  height: 100%;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+  z-index: 11111;
+}
+.delete-btn:hover {
+  background-color: var(--primary-red);
+}
+
+/* ToDoForm */
+#todo-form  {
+  width: 90%;
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+#todo-form .todo-form {
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+}
+
+.todo-form .todo-form-input, .weather-form .weather-form-input {
+  flex: 3;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid #a4a4a4;
+  margin-right: 10px;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+.todo-form .todo-form-btn, .weather-form .weather-form-btn {
+  flex: 1;
+  height: 100%;
+  background-color: #3998ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+  z-index: 11111;
+}
+
+
+.todo-form .todo-form-btn:hover,
+.weather-form .weather-form-btn:hover {
+  background-color: #007bff;
+}
+
+.todo-form .todo-form-btn:disabled,
+.weather-form .weather-form-btn:disabled {
+  background-color: grey;
+  color: #cccccc; 
+  cursor: not-allowed; 
+}
+
+/* Scale Select */
+#scale-select {
+  width: 100%;
+}
+
+#scale-select .scale-select {
+  height: 100%;
+  width: 90%;
+}
+
+.scale-select .scale-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.scale-wrapper li {
+  position: relative;
+  background: #f4f4f4;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 19px;
+  border: 1px #eee solid;
+  transition: 0.3s;
+  margin: 0 10px;
+}
+
+.scale-wrapper li label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.scale-wrapper li:hover {
+  background: #3998ff;
+  color: #fff;
+}
+
+.sort-btn-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.sort-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.sort-btn:hover {
+  background-color: #0056b3;
+}
+
+[type='radio'] {
+  opacity: 0;
+}
+
+[type='radio']:checked~label {
+  background: #3998ff;
+  color: #fff;
+  
+}
+
+/* Weather API Page */
+#weatherAPIPage {
+  width: 100%;
+  height: 100%;
+}
+
+#weatherAPIPage .weatherAPIPage {
+  height: 100%;
+  width: 100%;
+}
+
+.weatherAPIPage .weather-form {
+  height: 50px;
+  width: 90%;
+  display: flex;
+}
+
+.weather-form .weather-form-input {
+  flex: 3;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid #a4a4a4;
+  margin-right: 10px;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+.weather-results {
+  width: 50%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  border: 1px solid #a4a4a4;
+}
+
+.location {
+  font-size: 24px;
+  color: var(--primary-blue);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.temperature-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.temperature,
+.feels-like {
+  font-size: 18px;
+  color: var(--primary-red);
+}
+
+.additional-info {
+  border-top: 1px solid #d3d3d3;
+  padding-top: 15px;
+}
+
+.additional-info p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.additional-info span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Paginated Page */
+#paginated-page {
+  width: 100%;
+}
+
+#paginated-page .paginated-page {
+  width: 90%;
+  height: 100%;
+}
+
+.paginated-input {
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #a4a4a4;
+  margin-right: 10px;
+  padding-left: 20px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.sorting-buttons {
+  margin-bottom: 20px;
+}
+
+.sorting-buttons button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--primary-blue);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sorting-buttons button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.page-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-buttons button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background-color: white;
+  color: #007bff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page-buttons button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.page-buttons button:disabled {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.page-buttons button.active {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #0056b3;
+}
+
+
+
+
+
+
+
+
+ 
+
+
+

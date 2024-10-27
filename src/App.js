@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import ToDoItem from "./components/ToDoListApp/ToDoItem";
+import TodoPage from "./pages/TodoPage";
+import WeatherAPIPage from "./pages/WeatherAPIPage";
+import PaginatedPage from "./pages/PaginatedPage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/todo" Component={TodoPage} />
+        <Route path="/weatherAPI" Component={WeatherAPIPage} />
+        <Route path="/paginatedTable" Component={PaginatedPage} />
+      </Routes>
+    </Router>
   );
 }
 
